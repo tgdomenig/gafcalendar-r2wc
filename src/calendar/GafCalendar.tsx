@@ -146,6 +146,8 @@ export default function GafCalendar({language: lg='en_US'}: {language: LANGUAGE}
   return (
     <div id="gaf-calendar-web-component" className="web-component">
 
+      <h1>GAF CALENDAR:</h1>
+
       {currentConcertDay
         ? <GAFCalendarPopup lg={lg} concertDay={currentConcertDay} popupVisible={popupVisible} setPopupVisible={setPopupVisible} />
         : <div />
