@@ -12,6 +12,8 @@ npm install react-to-webcomponent
 
 build
 -----
+add shell script: ./predeploy.sh // siehe https://www.bitovi.com/blog/how-to-create-a-web-component-with-create-react-app
+
 npm run build
 
 deploy (siehe https://github.com/gitname/react-gh-pages)
