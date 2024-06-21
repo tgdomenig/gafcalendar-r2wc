@@ -7,7 +7,7 @@
 import r2wc from "@r2wc/react-to-web-component"
 
 const Greeting = () => {
-  return <div>Hello, World (TSX)!</div>
+  return <div>Hello, World!</div>
 }
 
 const WebGreeting = r2wc(Greeting)
