@@ -1,0 +1,31 @@
+# https://www.npmjs.com/package/react-to-webcomponent
+
+npx create-react-app gafdbfront --use-npm --template typescript
+cd gafdbfront
+
+npm install react-calendar
+npm install date-fns
+npm install antd
+
+npm install react-to-webcomponent
+
+
+build
+-----
+npm run build
+
+deploy (siehe https://github.com/gitname/react-gh-pages)
+------
+npm install gh-pages --save-dev
+
+add to package.json: 
+  "homepage": "https://gitname.github.io/react-gh-pages",
+
+add deployment scripts to package.json:
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    ...
+  }
+
+npm run deploy
