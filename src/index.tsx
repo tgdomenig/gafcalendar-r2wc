@@ -2,12 +2,17 @@
 
 // import r2wc from '@r2wc/react-to-web-component';
 // import Test from './components/Test.js';
-import GafCalendar from './calendar/GafCalendar';
-import Test from './Test';
-import React from 'react';
-import ReactDOM from "react-dom/client" // if using React 18
-import r2wc from "react-to-webcomponent"
+// import GafCalendar from './calendar/GafCalendar';
 
+import r2wc from "@r2wc/react-to-web-component"
+
+const Greeting = () => {
+  return <h1>Hello, World!</h1>
+}
+
+const WebGreeting = r2wc(Greeting)
+
+customElements.define("web-greeting", WebGreeting)
 /*
 const gafCalendar = r2wc(GafCalendar, React, ReactDOM, {
   props: {language: "string"}
@@ -16,6 +21,3 @@ const gafCalendar = r2wc(GafCalendar, React, ReactDOM, {
 customElements.define("gafCalendar-r2wc", gafCalendar);
 */
 
-const test = r2wc(Test, React, ReactDOM)
-
-customElements.define("test", test);
