@@ -10,7 +10,7 @@ const Greeting = () => {
   return <div>Hello, World!</div>
 }
 
-const WebGreeting = r2wc(Greeting)
+const WebGreeting = r2wc(Greeting, {shadow: "open"})
 
 customElements.define("web-greeting", WebGreeting)
 /*
