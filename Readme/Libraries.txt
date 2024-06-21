@@ -1,0 +1,16 @@
+# https://www.npmjs.com/package/react-to-webcomponent
+
+npx create-react-app gafdbfront --use-npm --template typescript
+cd gafdbfront
+
+npm install react-calendar
+npm install date-fns
+npm install antd
+
+import React from 'react'
+import { dateFnsLocalizer } from 'react-big-calendar'
+import {format, parse, startOfWeek, getDay} from 'date-fns';
+import { de } from 'date-fns/locale'
+
+@import '../../../node_modules/antd/dist/antd.css';
+/* @import './fonts.css'; */

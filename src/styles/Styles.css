@@ -1,0 +1,127 @@
+@import '../../../node_modules/antd/dist/antd.css';
+@import '../assets/fonts.css';
+
+.gaf-calendar-web-component {
+  --ocre: #C56C4E;
+  --almost_black: #191919;
+  --medium_grey: #7a7a7a;
+  --light_grey: #f0f0f0;
+}
+
+.react-calendar {
+  width: 500px;
+  max-width: 100%;
+  background: white; /* ITC */
+  border: 1px solid #a0a096;
+  font-family: "SangBleuSunrise";
+  line-height: 1.125em;
+}
+
+.react-calendar .react-calendar__tile {
+  padding: 9px 6.6667px;
+  border: solid 1px white;
+  color: #191919;
+}
+
+.react-calendar .react-calendar__month-view__weekdays {
+  /* border-top: solid 1px #7a7a7a;
+  border-bottom: solid 1px #7a7a7a; */
+  background-color: #254E5C;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.react-calendar .react-calendar__month-view__weekdays__weekday {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.react-calendar .react-calendar__month-view__weekdays__weekday abbr,
+.react-calendar .react-calendar__tile abbr {
+  text-decoration: none;
+  border-bottom: none;
+  cursor: pointer !important;
+}
+
+.react-calendar__tile:disabled { /* ITC */
+  font-family: "SangBleuSunrise";
+  background-color: var(--light_grey);
+}
+
+.react-calendar__tile.react-calendar__month-view__days__day--neighboringMonth {
+  color: #8a8a8a;
+}
+
+
+.react-calendar__tile:enabled {
+  font-family: "SangBleuSunrise";
+  color: white;
+  background-color: #C56C4E;
+}
+.react-calendar__tile:enabled.past-date {
+  background-color: #8a8a8a;
+}
+  .react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #254E5C; /* #e6e6e6; */
+}
+
+
+.react-calendar__navigation {
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.react-calendar__navigation button:disabled {
+  color: var(--almost_black);
+  font-size: 20px;
+  background-color: unset;
+}
+.react-calendar__navigation button {
+  font-family: "sang_bleu_republic";
+  font-size: 24px;
+}
+
+.react-calendar__tile {
+  line-height: 16px;
+}
+
+.ant-modal-footer {
+  border: none;
+  padding-top: 0;
+}
+
+.ant-modal-footer .buttons {
+  border-top: solid 1px #191919;
+  padding-top: 10px;
+}
+
+.ant-modal-footer .buttons a {
+  background-color: #C56C4E;
+  color: white;
+}
+
+.concert {
+  border-top: solid 1px #191919;
+  padding: 20px 0;
+}
+.concert .concert-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #C56C4E;
+}
+
+.concert .concert-program,
+.concert .concert-performers {
+  white-space: pre-wrap
+}
+.concert .concert-program,
+.concert .concert-performers,
+.concert .concert-location-times {
+  margin-top: 6px;
+}
+
+.ant-modal-footer .buttons {
+  display: flex;
+  justify-content: space-between;
+}

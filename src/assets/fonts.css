@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'SangBleuSunrise';
+  src: local('SangBleuSunrise'),
+       url('./fonts/SangBleuSunrise-Medium.woff') format('woff'),
+       url('./fonts/SangBleuSunrise-Medium.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'sang_bleu_republic';
+  src: local('SangBleuSunrise'),
+       url('./fonts/SangBleuRepublic-Regular.woff') format('woff'),
+       url('./fonts/SangBleuRepublic-Regular.ttf') format('ttf');
+}
+
