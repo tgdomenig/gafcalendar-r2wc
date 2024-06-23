@@ -4,7 +4,10 @@
 // import Test from './components/Test.js';
 
 import React from 'react'; // DIES IST WESENTLICH; siehe https://sentry.io/answers/react-typeerror-usestate/
+import ReactDOM from 'react-dom';
 // import { useState } from 'react'
+
+// SUCHE: TypeError: Cannot read properties of null (reading 'useState')
 
 import r2wc from "@r2wc/react-to-web-component"
 
