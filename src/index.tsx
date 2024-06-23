@@ -7,7 +7,7 @@ import GafCalendar from './calendar/GafCalendar';
 import r2wc from "@r2wc/react-to-web-component"
 
 const Greeting = ({name}: {name: string}) => {
-  return <div>Hello, World! (9: {name})</div>
+  return <div>Hello, World! (1: {name})</div>
 }
 
 const WebGreeting = r2wc(Greeting, {props: {name: "string"}})
