@@ -16,8 +16,10 @@ export default function GafCalendar({language: lg='en_US'}: {language: string}) 
   return(
     <div>THIS IS GAF CALENDAR: lg={lg}</div>
   );
+}
 
-  const locale = lg.substring(0,2);
+  export function GafCalendarORIG({language: lg='en_US'}: {language: string}) {
+    const locale = lg.substring(0,2);
 
   const startOfToday = new Date();
   startOfToday.setUTCHours(0, 0, 0, 0);
