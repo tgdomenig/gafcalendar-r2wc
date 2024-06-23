@@ -11,7 +11,12 @@ import { SITE, WEB_COMPONENT_NAME } from '../util/Globals';
 import { fetchListData } from '../fetch/FetchData';
 import '../styles/Styles.css'
 
-export default function GafCalendar({language: lg='en_US'}: {language: LANGUAGE}) {
+export default function GafCalendar({language: lg='en_US'}: {language: string}) {
+
+  return(
+    <div>THIS IS GAF CALENDAR: lg={lg}</div>
+  );
+
   const locale = lg.substring(0,2);
 
   const startOfToday = new Date();
