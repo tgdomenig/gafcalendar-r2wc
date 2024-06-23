@@ -1,16 +1,19 @@
 
 import {format, addDays, parseISO, addHours, parse, isValid} from 'date-fns'
 
-import { dispatchField, fmtTime } from '../util/Language.js';
-import { LANGUAGE } from '../util/Language';
+// import { dispatchField, fmtTime } from '../util/Language.js';
+import { LANGUAGE, dispatchField, fmtTime } from '../util/Language';
 import { ACF, FetchedEvent, FetchedPerformer, Performer, StagedEvent } from './Types.js';
 import { ConcertDay } from './Types.js';
 
-export function stageData(fetchedEvents: any[], language: LANGUAGE) : ConcertDay[] {
+export function stageData(fetchedEvents: FetchedEvent[], language: LANGUAGE) : ConcertDay[] {
+
+  console.log("stageData stageData stageData stageData stageData stageData stageData")
 
   const stagedEvents = stageEvents(fetchedEvents, language);
 
   const consolidatedEvents = consolidateEvents(stagedEvents);
+  console.log("consolidatedEvents consolidatedEvents consolidatedEvents consolidatedEvents consolidatedEvents")
 
   return consolidatedEvents;
 }
@@ -161,6 +164,7 @@ function _getArtists(managedArtists: string[]) : string[] {
       ["claire_huangci", "Claire Huangci"],
       ["dasol_kim", "Dasol Kim"],
       ["marek_kozak", "Marek Kozák"],
+      ["mihaly_berecz", "Mihály Berecz"],
       ["jonghai_park", "Jonghai Park"],
       ["ronaldo_rolim", "Rolando Rolim"],
       ["rolando_rolim", "Ronaldo Rolim"],
@@ -203,7 +207,13 @@ function consolidateEvents(events: StagedEvent[]) : ConcertDay[] {
     }
   });
 
-  return Array.from(consolidatedEvents.values());
+  const result = Array.from(consolidatedEvents.values());
+
+  result.sort((cd1, cd2) => cd1.date < cd2.date ? -1 : 1);
+
+  console.log("result", JSON.stringify(result))
+
+  return result;
 }
 
 

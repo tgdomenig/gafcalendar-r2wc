@@ -1,4 +1,3 @@
-@import '../../../node_modules/antd/dist/antd.css';
 @import '../assets/fonts.css';
 
 .gaf-calendar-web-component {
@@ -101,7 +100,10 @@
   color: white;
 }
 
-.concert {
+
+
+.concert, .concert .concert-title, .ant-modal-content h4 {
+  font-family: "SangBleuSunrise";
   border-top: solid 1px #191919;
   padding: 20px 0;
 }

@@ -9,6 +9,7 @@ import { fetchEvents } from '../data/DataSource';
 import { stageData } from '../data/StageData';
 import { SITE, WEB_COMPONENT_NAME } from '../util/Globals';
 import { fetchListData } from '../fetch/FetchData';
+import '../styles/Styles.css'
 
 export default function GafCalendar({language: lg='en_US'}: {language: LANGUAGE}) {
   const locale = lg.substring(0,2);
@@ -61,13 +62,16 @@ export default function GafCalendar({language: lg='en_US'}: {language: LANGUAGE}
     setEvents(newEvents);
     if (newEvents.length > 0) {
       const firstDay = newEvents[0];
-      const lastDay = newEvents[-1];
+      const lastDay = newEvents[newEvents.length-1];
+      console.log("firstDay", JSON.stringify(firstDay));
+      console.log("lastDay", JSON.stringify(lastDay));
       setLoadedTimeRange({from: firstDay.date, to: lastDay.date});
     }
   }
 
   const fetchAndStage = async ({fromDate, toDate}: {fromDate: Date, toDate: Date}) : Promise<ConcertDay[]> => {
     const endpoint = SITE + `wp-json/wp/v2/itc_cpt_concert`;
+    let events = [] as FetchedEvent[];
     /*
       BEMERKUNG: 
       min_concert_date und max_concert_date werden im WP-Rest-API definiert.
@@ -87,7 +91,10 @@ export default function GafCalendar({language: lg='en_US'}: {language: LANGUAGE}
 
     try {
 
-      await fetchListData<FetchedEvent>({endpoint, customArgs});
+      const result = await fetchListData<FetchedEvent>({endpoint, customArgs});
+      if (result.events) {
+        events = result.events;
+      }
     }
     catch (e) {
       Modal.error({
@@ -98,6 +105,7 @@ export default function GafCalendar({language: lg='en_US'}: {language: LANGUAGE}
 
     }
 
+    console.log("HIER HIER HIER HIER")
     const stagedEvents = stageData(events, lg);
 
     return stagedEvents;
@@ -159,6 +167,7 @@ export default function GafCalendar({language: lg='en_US'}: {language: LANGUAGE}
             // @ts-ignore
             onDayChange(value);
           }} 
+          onActiveStartDateChange={(args) => { console.log("args: ", args)}}
           value={currentConcertDay ? currentConcertDay.date : new Date()} 
           tileDisabled={isDisabled}
           tileClassName={tileClassNameFn}

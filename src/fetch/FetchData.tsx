@@ -94,10 +94,7 @@ export async function fetchListData<FetchedType>({endpoint, modifiedDate, custom
 
     const events: FetchedType[] = await jsonData;
 
-    /*
-    console.log("EVENTS for: " + uri);
-    console.log(events);
-    */
+//    console.log("EVENTS for: " + uri, JSON.stringify(events));
 
     if (events && events.length > 0) {
       fetchedEvents = [...fetchedEvents, ...events];
