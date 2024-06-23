@@ -17,8 +17,8 @@ export default function GafCalendar({language}: {language: string}) {
 
   const locale = lg.substring(0,2);
 
-  const startOfToday = new Date();
-  startOfToday.setUTCHours(0, 0, 0, 0);
+  // const startOfToday = new Date();
+  // startOfToday.setUTCHours(0, 0, 0, 0);
 
   const [events, setEvents] = useState<ConcertDay[]>([]);
 
