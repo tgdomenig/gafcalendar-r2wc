@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/gafcalendar-r2wc/static/js/main.e230eb1d.js",
+    "main.js": "/gafcalendar-r2wc/static/js/main.a1c12849.js",
     "index.html": "/gafcalendar-r2wc/index.html",
-    "main.e230eb1d.js.map": "/gafcalendar-r2wc/static/js/main.e230eb1d.js.map"
+    "main.a1c12849.js.map": "/gafcalendar-r2wc/static/js/main.a1c12849.js.map"
   },
   "entrypoints": [
-    "static/js/main.e230eb1d.js"
+    "static/js/main.a1c12849.js"
   ]
 }
