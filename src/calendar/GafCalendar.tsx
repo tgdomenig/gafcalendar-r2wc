@@ -49,18 +49,6 @@ export default function GafCalendar({language}: {language: string}) {
     updateEvents(newEvents);
   }
 
-
-  useEffect(() => {
-
-    const loadInitial = async () => {
-      const from = addMonths(lastDayOfMonth(new Date()),-1);
-      const to = addMonths(lastDayOfMonth(new Date()),2);
-      updateEvents(await fetchAndStage({fromDate: from, toDate: to}));
-    }
-
-    loadInitial();
-  }, [])
-
   const updateEvents = (newEvents: ConcertDay[]) => {
     setEvents(newEvents);
     if (newEvents.length > 0) {
@@ -115,7 +103,7 @@ export default function GafCalendar({language}: {language: string}) {
   }
 
   return(
-    <div>THIS IS GAF CALENDAR: lg={lg}</div>
+    <div>THIS IS GAF CALENDAR (1): lg={lg}</div>
   );
 }
 
