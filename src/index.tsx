@@ -6,11 +6,11 @@ import GafCalendar from './calendar/GafCalendar';
 
 import r2wc from "@r2wc/react-to-web-component"
 
-const Greeting = () => {
-  return <div>Hello, World! (5)</div>
+const Greeting = ({name}: {name: string}) => {
+  return <div>Hello, World! (6: {name})</div>
 }
 
-const WebGreeting = r2wc(Greeting, {shadow: "open"})
+const WebGreeting = r2wc(Greeting, {shadow: "open", props: {name: "string"}})
 
 customElements.define("web-greeting", WebGreeting)
 
