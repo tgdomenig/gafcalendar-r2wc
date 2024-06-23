@@ -15,22 +15,22 @@ export default function GafCalendar({language}: {language: string}) {
 
   const lg = language as LANGUAGE;
 
-  const locale = lg.substring(0,2);
+//  const locale = lg.substring(0,2);
 
   // const startOfToday = new Date();
   // startOfToday.setUTCHours(0, 0, 0, 0);
 
-  const [events, setEvents] = useState<ConcertDay[]>([]);
+  // const [events, setEvents] = useState<ConcertDay[]>([]);
 
-  const [currentConcertDay, setCurrentConcertDay] = useState<ConcertDay|undefined>(undefined);
+  // const [currentConcertDay, setCurrentConcertDay] = useState<ConcertDay|undefined>(undefined);
 
-  const [popupVisible, setPopupVisible] = useState(false);
+  // const [popupVisible, setPopupVisible] = useState(false);
 
-  const [loadedTimeRange, setLoadedTimeRange] = useState<{from: Date, to: Date}|undefined>(undefined);
+  // const [loadedTimeRange, setLoadedTimeRange] = useState<{from: Date, to: Date}|undefined>(undefined);
 
 
   return(
-    <div>THIS IS GAF CALENDAR (1): lg={lg}</div>
+    <div>THIS IS GAF CALENDAR (2): lg={lg}</div>
   );
 }
 
