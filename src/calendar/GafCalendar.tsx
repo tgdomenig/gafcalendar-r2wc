@@ -113,7 +113,7 @@ export default function GafCalendar({language: lg='en_US'}: {language: string}) 
     }
 
     console.log("HIER HIER HIER HIER")
-    const stagedEvents = stageData(events, lg);
+    const stagedEvents = stageData(events, lg as LANGUAGE);
 
     return stagedEvents;
   }
