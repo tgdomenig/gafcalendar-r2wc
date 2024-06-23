@@ -10,12 +10,12 @@ const Greeting = ({name}: {name: string}) => {
   return <div>Hello, World! (6: {name})</div>
 }
 
-const WebGreeting = r2wc(Greeting, {shadow: "open", props: {name: "string"}})
+const WebGreeting = r2wc(Greeting, {props: {name: "string"}})
 
 customElements.define("web-greeting", WebGreeting)
 
 const gafCalendar = r2wc(GafCalendar, {
-  shadow: "open",
+//  shadow: "open",
   props: {language: "string"}
 });
 
