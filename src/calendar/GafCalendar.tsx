@@ -31,7 +31,7 @@ export default function GafCalendar({language}: {language: string}) {
 
 
   return(
-    <div>THIS IS GAF CALENDAR (3): lg={lg} locale={locale}</div>
+    <div>THIS IS GAF CALENDAR (4): lg={lg} locale={locale}</div>
   );
 }
 
