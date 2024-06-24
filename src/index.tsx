@@ -10,7 +10,7 @@ import r2wc from "@r2wc/react-to-web-component"
 const Greeting = ({name}: {name: string}) => {
   const y = useState(0);
 
-  return <div>Hello, World! (2: {name}, y={y[0]})</div>
+  return <div>Hello, World! (11: {name}, y={y[0]})</div>
 }
 
 const WebGreeting = r2wc(Greeting, {props: {name: "string"}})
