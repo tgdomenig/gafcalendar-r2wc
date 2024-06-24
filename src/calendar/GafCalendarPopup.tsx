@@ -32,6 +32,7 @@ export default function GAFCalendarPopup({lg, concertDay, popupVisible, setPopup
     const {date, concerts} = concertDay;
     return(
       <Modal 
+      classNames={{wrapper: 'gaf-calendar-rwc-popup'}}
         getContainer={document.getElementById(WEB_COMPONENT_NAME) || undefined}
         centered={true}
         closable={false}

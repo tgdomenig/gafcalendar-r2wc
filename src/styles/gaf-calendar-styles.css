@@ -85,7 +85,6 @@
 }
 
 .gaf-calendar-rwc .ant-modal-footer .buttons {
-  border-top: solid 1px #191919;
   padding-top: 10px;
 }
 
@@ -94,11 +93,16 @@
   color: white;
 }
 
-
-
-.gaf-calendar-rwc .concert, .concert .concert-title, .ant-modal-content h4 {
-  font-family: "SangBleuSunrise";
+.gaf-calendar-rwc .concert,
+.gaf-calendar-rwc .ant-modal-footer .buttons {
   border-top: solid 1px #191919;
+}
+
+
+.gaf-calendar-rwc .concert,
+.gaf-calendar-rwc .concert .concert-title,
+.gaf-calendar-rwc .ant-modal-content h4 {
+  font-family: "SangBleuSunrise";
   padding: 20px 0;
 }
 
