@@ -1,0 +1,124 @@
+.gaf-calendar-rwc .react-calendar {
+  width: 500px;
+  max-width: 100%;
+  background: white; /* ITC */
+  border: 1px solid #a0a096;
+  font-family: "SangBleuSunrise";
+  line-height: 1.125em;
+}
+
+.gaf-calendar-rwc .react-calendar .react-calendar__tile {
+  padding: 9px 6.6667px;
+  border: solid 1px white;
+  color: #191919;
+}
+
+.gaf-calendar-rwc .react-calendar .react-calendar__month-view__weekdays {
+  /* border-top: solid 1px #7a7a7a;
+  border-bottom: solid 1px #7a7a7a; */
+  background-color: #254E5C;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.gaf-calendar-rwc .react-calendar .react-calendar__month-view__weekdays__weekday {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.gaf-calendar-rwc .react-calendar .react-calendar__month-view__weekdays__weekday abbr,
+.gaf-calendar-rwc .react-calendar .react-calendar__tile abbr {
+  text-decoration: none;
+  border-bottom: none;
+  cursor: pointer !important;
+}
+
+.gaf-calendar-rwc .react-calendar__tile:disabled { /* ITC */
+  font-family: "SangBleuSunrise";
+  background-color: var(--light_grey);
+}
+
+.gaf-calendar-rwc .react-calendar__tile.react-calendar__month-view__days__day--neighboringMonth {
+  color: #8a8a8a;
+}
+
+
+.gaf-calendar-rwc .react-calendar__tile:enabled {
+  font-family: "SangBleuSunrise";
+  color: white;
+  background-color: #C56C4E;
+}
+
+.gaf-calendar-rwc .react-calendar__tile:enabled.past-date {
+  background-color: #8a8a8a;
+}
+
+.gaf-calendar-rwc .react-calendar__tile:enabled:hover,
+.gaf-calendar-rwc .react-calendar__tile:enabled:focus {
+  background-color: #254E5C; /* #e6e6e6; */
+}
+
+
+.gaf-calendar-rwc .react-calendar__navigation {
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.gaf-calendar-rwc .react-calendar__navigation button:disabled {
+  color: var(--almost_black);
+  font-size: 20px;
+  background-color: unset;
+}
+
+.gaf-calendar-rwc .react-calendar__navigation button {
+  font-family: "sang_bleu_republic";
+  font-size: 24px;
+}
+
+.gaf-calendar-rwc .react-calendar__tile {
+  line-height: 16px;
+}
+
+.gaf-calendar-rwc .ant-modal-footer {
+  border: none;
+  padding-top: 0;
+}
+
+.gaf-calendar-rwc .ant-modal-footer .buttons {
+  border-top: solid 1px #191919;
+  padding-top: 10px;
+}
+
+.gaf-calendar-rwc .ant-modal-footer .buttons a {
+  background-color: #C56C4E;
+  color: white;
+}
+
+
+
+.gaf-calendar-rwc .concert, .concert .concert-title, .ant-modal-content h4 {
+  font-family: "SangBleuSunrise";
+  border-top: solid 1px #191919;
+  padding: 20px 0;
+}
+
+.gaf-calendar-rwc .concert .concert-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #C56C4E;
+}
+
+.gaf-calendar-rwc .concert .concert-program,
+.gaf-calendar-rwc .concert .concert-performers {
+  white-space: pre-wrap
+}
+.gaf-calendar-rwc .concert .concert-program,
+.gaf-calendar-rwc .concert .concert-performers,
+.gaf-calendar-rwc .concert .concert-location-times {
+  margin-top: 6px;
+}
+
+.gaf-calendar-rwc .ant-modal-footer .buttons {
+  display: flex;
+  justify-content: space-between;
+}
