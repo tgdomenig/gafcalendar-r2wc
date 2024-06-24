@@ -11,7 +11,7 @@ import { SITE, WEB_COMPONENT_NAME } from '../util/Globals';
 import { fetchListData } from '../fetch/FetchData';
 import '../styles/Styles.css'
 
-export default function GafCalendar({language}: {language: string}) {
+export function GafCalendarTEST({language}: {language: string}) {
 
   const lg = language as LANGUAGE;
 
@@ -120,7 +120,7 @@ export default function GafCalendar({language}: {language: string}) {
   );
 }
 
-export function GafCalendarORIG({language}: {language: string}) {
+export default function GafCalendar({language}: {language: string}) {
 
 
   const lg = language as LANGUAGE;
