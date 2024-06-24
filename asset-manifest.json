@@ -1,10 +1,17 @@
 {
   "files": {
-    "main.js": "/gafcalendar-r2wc/static/js/main.cab96160.js",
+    "main.css": "/gafcalendar-r2wc/static/css/main.e6d6f012.css",
+    "main.js": "/gafcalendar-r2wc/static/js/main.e26c53d9.js",
+    "static/media/SangBleuRepublic-Regular.ttf": "/gafcalendar-r2wc/static/media/SangBleuRepublic-Regular.5b377fd50ec06bcd96a0.ttf",
+    "static/media/SangBleuSunrise-Medium.ttf": "/gafcalendar-r2wc/static/media/SangBleuSunrise-Medium.e6cd03b74dbb78d761c0.ttf",
+    "static/media/SangBleuRepublic-Regular.woff": "/gafcalendar-r2wc/static/media/SangBleuRepublic-Regular.2b9406855248b2befdc4.woff",
+    "static/media/SangBleuSunrise-Medium.woff": "/gafcalendar-r2wc/static/media/SangBleuSunrise-Medium.7608fa65b6f64f8fde7b.woff",
     "index.html": "/gafcalendar-r2wc/index.html",
-    "main.cab96160.js.map": "/gafcalendar-r2wc/static/js/main.cab96160.js.map"
+    "main.e6d6f012.css.map": "/gafcalendar-r2wc/static/css/main.e6d6f012.css.map",
+    "main.e26c53d9.js.map": "/gafcalendar-r2wc/static/js/main.e26c53d9.js.map"
   },
   "entrypoints": [
-    "static/js/main.cab96160.js"
+    "static/css/main.e6d6f012.css",
+    "static/js/main.e26c53d9.js"
   ]
 }
