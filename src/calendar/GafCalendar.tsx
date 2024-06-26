@@ -5,7 +5,6 @@ import { LANGUAGE } from '../util/Language';
 import GAFCalendarPopup from './GafCalendarPopup';
 import { ConcertDay, FetchedEvent } from '../data/Types';
 import { addMonths, compareAsc, format, isSameDay, lastDayOfMonth, startOfMonth } from 'date-fns';
-import { fetchEvents } from '../data/DataSource';
 import { stageData } from '../data/StageData';
 import { SITE, WEB_COMPONENT_NAME } from '../util/Globals';
 import { fetchListData } from '../fetch/FetchData';
