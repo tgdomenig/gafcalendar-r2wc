@@ -20,14 +20,8 @@ export type StagedEvent = {
   addPianist: boolean;
 };
 
-
-/* Fetch events from tribe events REST API and stage them in an appropriate format */
-// const ENDPOINT_SLUG = SITE + `wp-json/tribe/events/v1/events?start_date=2021-04-01&per_page=100`;
-//     https://tcw.it-couture.ch/wp-json/tribe/events/v1/events?start_date=2021-06-28&per_page=100
-// https://tc-witikon.ch/wp-json/tribe/events/v1/events?start_date=2021-04-01&per_page=100
-// https://tcw.it-couture.ch/wp-json/tribe/events/v1/events?start_date=2021-04-01&per_page=100
-
 export type ConcertDay = {
+  dateStr: string; // "yyyyMMdd"
   date: Date;
   concerts: StagedEvent[];
 };

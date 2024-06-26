@@ -26,9 +26,6 @@ function _fetchFn(response: _FetchResponse) {
 
 export async function fetchData<FetchedType>({endpoint}: FetchArgs): Promise<FetchResult<FetchedType>> {
   
-  console.log("FETCHING DATA:");
-  console.log(endpoint);
-
   const result = await fetch(endpoint).then(_fetchFn).catch(error => ({error})) as FetchResponse<FetchedType>;
   const { jsonData, error } = result;
 
@@ -51,6 +48,7 @@ export async function fetchListData<FetchedType>({endpoint, modifiedDate, custom
   if (customArgs) {
     for (var arg of customArgs) {
       slug += `${separator}${arg.label}=${arg.value}`
+      separator = "&";
     }
   }
   // if (startDate) {
@@ -75,17 +73,9 @@ export async function fetchListData<FetchedType>({endpoint, modifiedDate, custom
   while (go_on) {
 
     const uri = `${slug}&page=${page}`;
-    
-    
-    console.log("FETCHING LIST DATA:");
-    console.log(uri);
-    
-   
+       
     const result = await fetch(uri).then(_fetchFn).catch(error => ({error})) as FetchListResponse<FetchedType>;
     const {totalPages, jsonData, error} = result;
-
-    console.log(`page: ${page}, total Pages: ${totalPages}`);
-//    console.log(result);
 
     if (error) {
       return ({error});
@@ -93,8 +83,6 @@ export async function fetchListData<FetchedType>({endpoint, modifiedDate, custom
 
 
     const events: FetchedType[] = await jsonData;
-
-//    console.log("EVENTS for: " + uri, JSON.stringify(events));
 
     if (events && events.length > 0) {
       fetchedEvents = [...fetchedEvents, ...events];

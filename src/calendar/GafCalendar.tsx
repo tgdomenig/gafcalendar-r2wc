@@ -13,7 +13,6 @@ import { fetchListData } from '../fetch/FetchData';
 
 export default function GafCalendar({language}: {language: string}) {
 
-
   const lg = language as LANGUAGE;
 
   const locale = lg.substring(0,2);
@@ -27,9 +26,10 @@ export default function GafCalendar({language}: {language: string}) {
 
   const [popupVisible, setPopupVisible] = useState(false);
 
-  const [loadedTimeRange, setLoadedTimeRange] = useState<{from: Date, to: Date}|undefined>(undefined);
+  const [loadedTimeRange_DEP, setLoadedTimeRange_DEP] = useState<{from: Date, to: Date}|undefined>(undefined);
+  const [loadedTimeRange, setLoadedTimeRange] = useState<{from: string, to: string}|undefined>(undefined);
 
-  const loadMoreEvents = async ({loadFrom, loadTo}: {loadFrom: Date, loadTo: Date}) => {
+  const loadMoreEvents = async ({loadFrom, loadTo}: {loadFrom: string, loadTo: string}) => {
 
     let newEvents = [...events] as ConcertDay[];
     if (loadedTimeRange) {
@@ -47,33 +47,28 @@ export default function GafCalendar({language}: {language: string}) {
       // should actually not happen
       newEvents = await fetchAndStage({fromDate: loadFrom, toDate: loadTo});
     }
-    updateEvents(newEvents);
+    updateEvents(newEvents, loadFrom, loadTo);
   }
 
 
   useEffect(() => {
 
     const loadInitial = async () => {
-      const from = addMonths(lastDayOfMonth(new Date()),-1);
-      const to = addMonths(lastDayOfMonth(new Date()),2);
-      updateEvents(await fetchAndStage({fromDate: from, toDate: to}));
+      const fromDate = format(addMonths(lastDayOfMonth(new Date()),-1), "yyyyMMdd");
+      const toDate = format(addMonths(lastDayOfMonth(new Date()),2), "yyyyMMdd");
+      const lddEvents = await fetchAndStage({fromDate, toDate});
+      updateEvents(lddEvents, fromDate, toDate);
     }
 
     loadInitial();
   }, [])
 
-  const updateEvents = (newEvents: ConcertDay[]) => {
+  const updateEvents = (newEvents: ConcertDay[], from: string, to: string) => {
     setEvents(newEvents);
-    if (newEvents.length > 0) {
-      const firstDay = newEvents[0];
-      const lastDay = newEvents[newEvents.length-1];
-      console.log("firstDay", JSON.stringify(firstDay));
-      console.log("lastDay", JSON.stringify(lastDay));
-      setLoadedTimeRange({from: firstDay.date, to: lastDay.date});
-    }
+    setLoadedTimeRange({from, to});
   }
 
-  const fetchAndStage = async ({fromDate, toDate}: {fromDate: Date, toDate: Date}) : Promise<ConcertDay[]> => {
+  const fetchAndStage = async ({fromDate, toDate}: {fromDate: string, toDate: string}) : Promise<ConcertDay[]> => {
     const endpoint = SITE + `wp-json/wp/v2/itc_cpt_concert`;
     let events = [] as FetchedEvent[];
     /*
@@ -85,11 +80,11 @@ export default function GafCalendar({language}: {language: string}) {
     const customArgs = [
       {
         label: 'min_concert_date',
-        value: format(fromDate, "yyyyMMdd")
+        value: fromDate
       },
       {
         label: 'max_concert_date',
-        value: format(toDate, "yyyyMMdd")
+        value: toDate
       }
     ];
 
@@ -108,24 +103,23 @@ export default function GafCalendar({language}: {language: string}) {
       });
 
     }
-
-    console.log("HIER HIER HIER HIER")
     const stagedEvents = stageData(events, lg);
 
     return stagedEvents;
   }
 
   const onMonthChange = (firstDayOfNewMonth: Date) => {
+    const firstDay = format(firstDayOfNewMonth, "yyyyMMdd");
 
     /* check if more data has to be loaded  */
     if (loadedTimeRange) {
       let newLoadFrom, newLoadTo;
       const {from, to} = loadedTimeRange;
-      if (firstDayOfNewMonth < from) {
-        newLoadFrom = addMonths(firstDayOfNewMonth, -2);
+      if (firstDay < from) {
+        newLoadFrom = format(addMonths(firstDayOfNewMonth, -2), "yyyyMMdd");
       }
-      else if (firstDayOfNewMonth > to) {
-        newLoadTo = addMonths(firstDayOfNewMonth, 3);
+      else if (firstDay > to) {
+        newLoadTo = format(addMonths(firstDayOfNewMonth, 3), "yyyyMMdd");
       }
       
 
@@ -158,8 +152,6 @@ export default function GafCalendar({language}: {language: string}) {
   return (
     <div id="gaf-calendar-web-component" className="gaf-calendar-rwc">
 
-      <h1>GAF CALENDAR:</h1>
-
       {currentConcertDay
         ? <GAFCalendarPopup lg={lg} concertDay={currentConcertDay} popupVisible={popupVisible} setPopupVisible={setPopupVisible} />
         : <div />
@@ -171,7 +163,7 @@ export default function GafCalendar({language}: {language: string}) {
             // @ts-ignore
             onDayChange(value);
           }} 
-          onActiveStartDateChange={(args) => { console.log("args: ", args)}}
+          onActiveStartDateChange={({activeStartDate}) => { if (activeStartDate) { onMonthChange(activeStartDate); } }}
           value={currentConcertDay ? currentConcertDay.date : new Date()} 
           tileDisabled={isDisabled}
           tileClassName={tileClassNameFn}

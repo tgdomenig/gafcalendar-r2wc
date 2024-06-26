@@ -8,12 +8,9 @@ import { ConcertDay } from './Types.js';
 
 export function stageData(fetchedEvents: FetchedEvent[], language: LANGUAGE) : ConcertDay[] {
 
-  console.log("stageData stageData stageData stageData stageData stageData stageData")
-
   const stagedEvents = stageEvents(fetchedEvents, language);
 
   const consolidatedEvents = consolidateEvents(stagedEvents);
-  console.log("consolidatedEvents consolidatedEvents consolidatedEvents consolidatedEvents consolidatedEvents")
 
   return consolidatedEvents;
 }
@@ -203,15 +200,13 @@ function consolidateEvents(events: StagedEvent[]) : ConcertDay[] {
       consolidatedEvents.get(dateStr).concerts.push(rest);
     }
     else {
-      consolidatedEvents.set(dateStr, {date, concerts: [rest]});
+      consolidatedEvents.set(dateStr, {date, dateStr: dateStr.replaceAll('-', ''), concerts: [rest]});
     }
   });
 
   const result = Array.from(consolidatedEvents.values());
 
   result.sort((cd1, cd2) => cd1.date < cd2.date ? -1 : 1);
-
-  console.log("result", JSON.stringify(result))
 
   return result;
 }

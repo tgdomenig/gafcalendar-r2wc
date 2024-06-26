@@ -9,10 +9,12 @@ npm install antd
 
 npm install react-to-webcomponent
 
+Bemerkung: Die Datei styles/gaf-calendar-styles.css wird nicht in der Webkomponente verwendet, sondern direkt von WordPress 
+(d.h. Datei wird nach wp-content/themes/childtheme/ kopiert)
 
-build
+build (siehe https://www.bitovi.com/blog/how-to-create-a-web-component-with-create-react-app)
 -----
-add shell script: ./predeploy.sh // siehe https://www.bitovi.com/blog/how-to-create-a-web-component-with-create-react-app
+add shell script: ./predeploy.sh
 
 npm run build
 

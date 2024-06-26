@@ -68,7 +68,8 @@ const RConcerts = ({lg, date, concerts}: RConcertsProps) => {
     return (
       <div>
         <h4>{fmtDate(date, lg)}</h4>
-        {concertsClone.map((concert: StagedEvent) => <RConcert lg={lg} concert={concert} />)}
+        {concertsClone.map((concert: StagedEvent, i: number) => 
+          <div key={"concert-" + i}><RConcert lg={lg} concert={concert} /></div>)}
       </div>
     );  
   }
@@ -144,8 +145,8 @@ function RConcertTitle({title, titleFreetext, managedArtists}: {title: string, t
   else {
     return (
       <div className="concert-title">
-        {managedArtists && managedArtists.map(artist => {
-          return(<div>{artist}</div>)
+        {managedArtists && managedArtists.map((artist: string, i: number) => {
+          return(<div key={"artist-" + i}>{artist}</div>)
         })}
       </div>
     );
