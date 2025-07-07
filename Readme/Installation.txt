@@ -1,3 +1,22 @@
+Bemerkung:
+----------
+Der Kalender kann auf zwei Arten gelauncht werden:
+
+(*) wenn index.tsx === index_dev.tsx ist, launche mit npm start. Beachte, dass der Kalender in diesem Fall nicht "gestylt" ist, 
+weil die css-Datei erst in Wordpress geladen wird.
+
+(*) wenn index.tsx === index_prod.tsx, so publiziere mit npm run deploy. Diese als github-page publizierte Version wird von der Webseite geladen.
+
+Der Code in Wordpress ist wie folgt:
+
+----------------- Wordpress Code --------------------
+<script defer="defer" src="https://tgdomenig.github.io/gafcalendar-r2wc/static/js/main.js"></script>
+<body>
+  <gaf-calendar-r2wc language="en_US"></gaf-calendar-r2wc>
+</body>
+----------------- End Wordpress Code --------------------
+
+
 # https://www.npmjs.com/package/react-to-webcomponent
 
 npx create-react-app gafdbfront --use-npm --template typescript

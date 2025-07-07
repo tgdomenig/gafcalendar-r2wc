@@ -156,23 +156,25 @@ function _getArtists(managedArtists: string[]) : string[] {
   }
   else {
     const lookup = new Map<string, string>([
-      ["anton_gerzenberg", "Anton Gerzenberg"],
-      ["giorgi_gigashvili", "Giorgi Gigashvili"],
-      ["claire_huangci", "Claire Huangci"],
-      ["dasol_kim", "Dasol Kim"],
-      ["marek_kozak", "Marek Kozák"],
-      ["mihaly_berecz", "Mihály Berecz"],
-      ["jonghai_park", "Jonghai Park"],
-      ["ronaldo_rolim", "Rolando Rolim"],
-      ["rolando_rolim", "Ronaldo Rolim"],
-      ["alexandr_shaikin", "Alexandr Shaikin"],
-      ["sergey_tanin", "Sergey Tanin"],
-      ["julian_trevelyan", "Julian Trevelyan"],
-      ["alexei_volodin", "Alexey Volodin"],
-      ["vasilii_zabolotnii", "Vasilii Zabolotnii"],
-      ["ilya_shmukler", 'Ilya Shmukler'],
-      ["daumants_liepins", 'Daumants Liepins'],
-      ["dmitry_yudin", 'Dmitry Yudin']
+        ["anton_gerzenberg", "Anton Gerzenberg"],
+        ["giorgi_gigashvili", "Giorgi Gigashvili"],
+        ["claire_huangci", "Claire Huangci"],
+        ["dasol_kim", "Dasol Kim"],
+        ["marek_kozak", "Marek Kozák"],
+        ["mihaly_berecz", "Mihály Berecz"],
+        ["jonghai_park", "Jonghai Park"],
+        ["ronaldo_rolim", "Rolando Rolim"],
+        ["rolando_rolim", "Ronaldo Rolim"],
+        ["alexandr_shaikin", "Alexandr Shaikin"],
+        ["sergey_tanin", "Sergey Tanin"],
+        ["julian_trevelyan", "Julian Trevelyan"],
+        ["alexei_volodin", "Alexey Volodin"],
+        ["vasilii_zabolotnii", "Vasilii Zabolotnii"],
+        ["ilya_shmukler", 'Ilya Shmukler'],
+        ["daumants_liepins", 'Daumants Liepins'],
+        ["dmitry_yudin", 'Dmitry Yudin'],
+        ['wataru_hisasue', "Wataru Hisasue"],
+        ['laura_mota_pello', "Laura Mota Pello"]
     ])
     return managedArtists.map((key: string) => lookup.get(key) || key);
   }
