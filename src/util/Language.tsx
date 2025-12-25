@@ -32,7 +32,7 @@ export function dispatchStr(strEn: string, language: LANGUAGE) {
     return strEn;
   }
   else {
-    const _ix = (language == 'fr_FR') ? 0 : 1;
+    const _ix = (language === 'fr_FR') ? 0 : 1;
     const ob = StringTranslation.get(strEn);
     return ob ? ob[_ix] : strEn // default to English
   }

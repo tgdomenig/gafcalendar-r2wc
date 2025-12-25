@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar'; // https://openbase.com/js/react-calendar/documentation
-import {Modal, Button} from 'antd'
+import {Modal} from 'antd'
 import { LANGUAGE } from '../util/Language';
 import GAFCalendarPopup from './GafCalendarPopup';
 import { ConcertDay, FetchedEvent } from '../data/Types';
-import { addMonths, compareAsc, format, isSameDay, lastDayOfMonth, startOfMonth } from 'date-fns';
+import { addMonths, format, isSameDay, lastDayOfMonth } from 'date-fns';
 import { stageData } from '../data/StageData';
 import { SITE, WEB_COMPONENT_NAME } from '../util/Globals';
 import { fetchListData } from '../fetch/FetchData';
@@ -25,7 +25,6 @@ export default function GafCalendar({language}: {language: string}) {
 
   const [popupVisible, setPopupVisible] = useState(false);
 
-  const [loadedTimeRange_DEP, setLoadedTimeRange_DEP] = useState<{from: Date, to: Date}|undefined>(undefined);
   const [loadedTimeRange, setLoadedTimeRange] = useState<{from: string, to: string}|undefined>(undefined);
 
   const loadMoreEvents = async ({loadFrom, loadTo}: {loadFrom: string, loadTo: string}) => {

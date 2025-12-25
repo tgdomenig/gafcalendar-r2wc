@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {Modal, Button} from 'antd'
 import { ConcertDay } from '../data/Types';
 import { StagedEvent } from '../data/Types';

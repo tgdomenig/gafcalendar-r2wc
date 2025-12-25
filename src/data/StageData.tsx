@@ -151,7 +151,7 @@ function _stagePerformers({performers}: {performers: FetchedPerformer[] | null},
 }
 
 function _getArtists(managedArtists: string[]) : string[] {
-  if (! managedArtists || managedArtists.length == 0) {
+  if (! managedArtists || managedArtists.length === 0) {
     return [];
   }
   else {
